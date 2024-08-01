@@ -1,0 +1,154 @@
+@import url('https://unpkg.com/leaflet@1.7.1/dist/leaflet.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'PoppinsRegular';
+    src: url('../public/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PoppinsLight';
+  src: url('../public/fonts/Poppins/Poppins-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NirmalaUI';
+    src: url('../public/fonts/nirmala-ui-font/Nirmala.ttf') format('truetype');
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn ease 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+body {
+    font-family: 'PoppinsRegular', sans-serif;
+}
+
+.light {
+  font-family: 'PoppinsLight', sans-serif;
+}
+
+.nirmala {
+    font-family: 'NirmalaUI', sans-serif;
+}
+
+.side-slide-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .side-slide-bar.open {
+    transform: translateX(0);
+  }
+  
+  .nav-item {
+    text-align: center;
+    padding: 5px 5px; /* Mengurangi padding */
+    width: auto; /* Biarkan width mengikuti konten */
+    white-space: nowrap; /* Cegah teks terpecah menjadi dua baris */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-item:hover {
+    color: #008BF9;
+  }
+  
+  .close-btn {
+    align-self: flex-end;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+@media (min-width: 768px) {
+  .multi-column {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .multi-column {
+    column-count: 1;
+  }
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* atau ukuran yang diinginkan */
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #3498db;
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  to {
+    transform: translateY(-100%);
+    opacity: 0.5;
+  }
+}
+
+.facility-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.facility-card img {
+  transition: transform 0.3s ease;
+}
+.facility-card:hover img {
+  transform: scale(1.03);
+}
+.facility-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.facility-card:hover .overlay {
+  opacity: 1;
+}
