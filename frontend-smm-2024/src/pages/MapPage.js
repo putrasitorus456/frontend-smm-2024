@@ -5,6 +5,8 @@ import Header from '../components/header';
 import LogoNav from '../components/logonav';
 import Copyright from '../components/copyright';
 
+console.log("MapPage component rendered");
+
 const MotionSection = ({ children, delay = 0.2, duration = 0.75 }) => { // Mengurangi durasi menjadi 0.5 detik
   const { ref, inView } = useInView({
     triggerOnce: false,
@@ -23,7 +25,7 @@ const MotionSection = ({ children, delay = 0.2, duration = 0.75 }) => { // Mengu
   );
 };
 
-const MainComponent = () => {
+const MapPage = () => {
   return (
     <div className="flex flex-col bg-white">
       <Header />
@@ -40,4 +42,4 @@ const MainComponent = () => {
   );
 };
 
-export default MainComponent;
+export default MapPage;

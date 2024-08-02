@@ -1,199 +1,152 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import Header from '../components/header';
-import LogoNav from '../components/logonav';
-import Copyright from '../components/copyright';
-import axios from 'axios';
+import React, { useState, useEffect, useMemo } from 'react';
+import { FaHome, FaInfo, FaSitemap, FaMapMarkedAlt, FaNewspaper, FaMap, FaHandsHelping, FaBuilding } from 'react-icons/fa';
 
-const MotionSection = ({ children, delay = 0.2, duration = 0.75 }) => {
-  const { ref, inView } = useInView({
-    triggerOnce: false,
-    threshold: 0.1,
-  });
+const LogoNav = () => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [activeNavItem, setActiveNavItem] = useState('Home');
 
-  return (
-    <motion.section
-      ref={ref}
-      initial={{ opacity: 0, y: 20, scale: 0.95 }}
-      animate={inView ? { opacity: 1, y: 0, scale: 1, rotate: 0 } : { opacity: 0, y: 20, scale: 0.95 }}
-      transition={{ delay, duration, ease: 'easeInOut' }}
-    >
-      {children}
-    </motion.section>
-  );
-};
+  const navItems = useMemo(() => [
+    { name: 'Home', icon: <FaHome />, path: '/home' },
+    { name: 'Tentang Desa', icon: <FaInfo />, path: '/tentang-desa' },
+    { name: 'Struktur Pemerintahan', icon: <FaSitemap />, path: '/struktur-pemerintahan' },
+    { name: 'Wisata', icon: <FaMapMarkedAlt />, path: '/wisata' },
+    { name: 'Fasilitas Umum', icon: <FaBuilding />, path: '/fasilitas-umum' },
+    { name: 'Berita', icon: <FaNewspaper />, path: '/berita' },
+    { name: 'Peta', icon: <FaMap />, path: '/peta' },
+    { name: 'KKN', icon: <FaHandsHelping />, path: '/kkn' },
+  ], []);
 
-const SidebarItem = ({ label, isActive, onClick }) => {
-  const baseClasses = 'px-5 py-6 whitespace-nowrap bg-white border-b border-blue-50 max-md:px-5 text-sm cursor-pointer hover:bg-blue-100';
-  const activeClasses = 'flex gap-5 justify-between py-5 pl-5 font-medium text-white whitespace-nowrap bg-sky-500 border-b border-gray-300 max-md:pl-5 text-sm';
+  useEffect(() => {
+    const currentPath = window.location.pathname;
+    const activeItem = navItems.find(item => currentPath.startsWith(item.path));
+    if (activeItem) {
+      setActiveNavItem(activeItem.name);
+    }
+  }, [navItems]);
 
-  return (
-    <motion.li
-      className={isActive ? activeClasses : baseClasses}
-      onClick={onClick}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-    >
-      {label}
-      {isActive && (
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/a034744d6aaea12b747870a7f13560f878b7a1726504227699aa678331277bce?apiKey=7fd2b033b9574f39882fe9ef4728cd45&&apiKey=7fd2b033b9574f39882fe9ef4728cd45"
-          className="shrink-0 w-1.5 aspect-[0.3] fill-sky-500"
-          alt=""
-        />
-      )}
-    </motion.li>
-  );
-};
+  const handleNavToggle = () => {
+    setIsNavOpen(!isNavOpen);
+  };
 
-const ContentSection = ({ activeItem }) => {
-  const content = {
-    Overview: 'Penjelasan singkat tentang Desa Aek Sipitudai...',
-    Demography: 'Informasi demografis Desa Aek Sipitudai...',
-    Divisions: 'Informasi tentang divisi-divisi di Desa Aek Sipitudai...',
-    Districts: 'Informasi tentang distrik di Desa Aek Sipitudai...',
-    Tehsils: 'Informasi tentang tehsil di Desa Aek Sipitudai...',
-    Blocks: 'Informasi tentang blok di Desa Aek Sipitudai...',
-    GramPanchayat: 'Informasi tentang gram panchayat di Desa Aek Sipitudai...',
-    Villages: 'Informasi tentang desa-desa di Desa Aek Sipitudai...',
+  const handleCloseNav = () => {
+    setIsNavOpen(false);
+  };
+
+  const handleSelectNavItem = (item) => {
+    setActiveNavItem(item.name);
+    setIsNavOpen(false);
+  };
+
+  const styles = {
+    sideSlideBar: {
+      position: 'fixed',
+      top: 0,
+      right: 0,
+      height: '100%',
+      width: '250px',
+      backgroundColor: 'white',
+      boxShadow: '-2px 0 5px rgba(0, 0, 0, 0.5)',
+      transform: isNavOpen ? 'translateX(0)' : 'translateX(100%)',
+      transition: 'transform 0.3s ease-in-out',
+      zIndex: 1000,
+      paddingTop: '20px',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+    navItem: {
+      textAlign: 'center',
+      padding: '10px 10px',
+      width: '100%',
+      transition: 'background-color 0.3s ease, color 0.3s ease',
+      display: 'flex',
+      alignItems: 'center',
+      gap: '10px',
+    },
+    navItemHover: {
+      color: '#008BF9',
+    },
+    closeBtn: {
+      alignSelf: 'flex-end',
+      padding: '10px',
+      cursor: 'pointer',
+    },
+    header: {
+      marginBottom: '20px',
+      fontSize: '18px',
+      fontWeight: 'bold',
+    },
+    footer: {
+      marginTop: 'auto',
+      paddingBottom: '20px',
+      fontSize: '12px',
+      color: 'grey',
+    }
   };
 
   return (
-    <article className="flex flex-col ml-5 w-[82%] max-md:ml-0 max-md:w-full">
-      <div className="grow px-6 py-5 w-full bg-white shadow-[0px_5px_7px_rgba(0,14,31,0.18)] max-md:px-5 max-md:mt-9 max-md:max-w-full text-sm">
-        <div className="flex gap-5 max-md:flex-col">
-          <div className="flex flex-col w-full max-md:ml-0 max-md:w-full">
-            <h3 className="text-2xl font-semibold leading-8 text-indigo-900 max-md:max-w-full text-sm">
-              {activeItem}
-            </h3>
-            <p className="mt-5 leading-7 font-sm text-stone-500 max-md:max-w-full text-sm">
-              {content[activeItem]}
-            </p>
-          </div>
-          <div className="flex flex-col w-full max-md:ml-0 max-md:w-full">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/e2fe527f67ecd2e9b95ba40b56ccbb130cac5614535c98b4aa50245bc947a691?apiKey=7fd2b033b9574f39882fe9ef4728cd45&&apiKey=7fd2b033b9574f39882fe9ef4728cd45"
-              className="grow w-full aspect-[1.12] max-md:mt-10 max-md:max-w-full"
-              alt={activeItem}
-            />
+    <div className="flex flex-col md:flex-row justify-between self-center w-full max-w-[1100px] max-md:flex-wrap max-md:max-w-full transition-all duration-300">
+      <div className="flex gap-2.5 justify-between">
+        <div className="flex justify-center items-center">
+          <img 
+            loading="lazy" 
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/98111513cd45d7e0286b6140cdb19313444abe998eec3ae057beb3cc9562cf1c?apiKey=7fd2b033b9574f39882fe9ef4728cd45&" 
+            alt="Logo" 
+            className="aspect-[0.81] w-[30px]" 
+          />
+          <div className="flex flex-col justify-center my-auto text-indigo-900">
+            <div className="flex flex-col px-5">
+              <div className="text-sm font-black">
+                Pemerintah Kabupaten Samosir
+              </div>
+              <div className="mt-1.5 text-[15px] font-medium">
+                Desa Aek Sipitudai
+              </div>
+            </div>
           </div>
         </div>
+        <button
+          className="sm:hidden text-indigo-900 focus:outline-none text-2xl" 
+          onClick={handleNavToggle}
+          aria-label="Toggle navigation"
+          aria-expanded={isNavOpen}
+        >
+          ☰
+        </button>
       </div>
-    </article>
-  );
-};
-
-const sidebarItems = [
-  { label: 'Overview', isActive: true },
-  { label: 'Demography', isActive: false },
-  { label: 'Divisions', isActive: false },
-  { label: 'Districts', isActive: false },
-  { label: 'Tehsils', isActive: false },
-  { label: 'Blocks', isActive: false },
-  { label: 'Gram Panchayat', isActive: false },
-  { label: 'Villages', isActive: false },
-];
-
-const ExploreState = () => {
-  const [activeItem, setActiveItem] = useState('Overview');
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const handleSidebarToggle = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
-  const handleCloseSidebar = () => {
-    setIsSidebarOpen(false);
-  };
-
-  return (
-    <main className="flex justify-center items-center bg-white max-md:px-5">
-      <section className="flex flex-col items-center px-8 pb-20 mt-3 w-full bg-white max-w-[1399px] max-md:max-w-full">
-        <h2 className="self-center text-xl font-medium text-center text-sky-500 text-sm">
-          Mengenal Lebih Dalam
-        </h2>
-        <h1 className="self-center mt-3 text-2xl font-semibold text-center text-indigo-900 text-sm">
-          Keadaan dan Informasi Desa Aek Sipitudai
-        </h1>
-        <div className="self-stretch mt-9 mb-7 max-md:max-w-full">
-          <div className="flex gap-5 max-md:flex-col">
-            <nav className="hidden md:flex md:flex-col w-[18%] max-md:ml-0 max-md:w-full">
-              <ul className="flex flex-col grow text-lg leading-7 shadow-[0px_5px_7px_rgba(0,14,31,0.18)] text-neutral-400 max-md:mt-8">
-                {sidebarItems.map((item, index) => (
-                  <SidebarItem
-                    key={index}
-                    label={item.label}
-                    isActive={activeItem === item.label}
-                    onClick={() => {
-                      setActiveItem(item.label);
-                      handleCloseSidebar();
-                    }}
-                  />
-                ))}
-              </ul>
-            </nav>
-            <div className="md:hidden flex justify-end w-full">
-              <button
-                className="text-indigo-900 focus:outline-none"
-                onClick={handleSidebarToggle}
-                aria-label="Toggle sidebar"
-                aria-expanded={isSidebarOpen}
-              >
-                ☰
-              </button>
-            </div>
-            {isSidebarOpen && (
-              <div className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-40" onClick={handleCloseSidebar}></div>
-            )}
-            <div
-              className={`md:hidden fixed top-0 right-0 h-full w-[250px] bg-white shadow-[0px_5px_7px_rgba(0,14,31,0.18)] z-50 transform ${
-                isSidebarOpen ? 'translate-x-0' : 'translate-x-full'
-              } transition-transform duration-300`}
-            >
-              <button className="p-5 text-indigo-900 focus:outline-none" onClick={handleCloseSidebar}>
-                ✕
-              </button>
-              <ul className="flex flex-col text-lg leading-7 text-neutral-400">
-                {sidebarItems.map((item, index) => (
-                  <SidebarItem
-                    key={index}
-                    label={item.label}
-                    isActive={activeItem === item.label}
-                    onClick={() => {
-                      setActiveItem(item.label);
-                      handleCloseSidebar();
-                    }}
-                  />
-                ))}
-              </ul>
-            </div>
-            <ContentSection activeItem={activeItem} />
-          </div>
-        </div>
-      </section>
-    </main>
-  );
-};
-
-const MainComponent = () => {
-  return (
-    <div className="flex flex-col bg-white">
-      <Header />
-      <motion.div
-        className="px-5 flex gap-5 justify-center self-center mt-5 mb-5 w-full max-w-[1399px] max-md:px-5 max-md:max-w-full"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.75, ease: 'easeInOut' }}
-      >
-        <LogoNav />
-      </motion.div>
-      <ExploreState />
-      <Copyright />
+      <nav className="hidden md:flex md:flex-row gap-5 justify-between my-auto text-[13px] font-medium leading-5 text-right text-[#666666]">
+        {navItems.map((item, index) => (
+          <a
+            key={index} 
+            href={item.path} 
+            className={`nav-item ${activeNavItem === item.name ? 'text-sky-500' : ''}`}
+            onClick={() => handleSelectNavItem(item)}
+          >
+            {item.name}
+          </a>
+        ))}
+      </nav>
+      <div style={styles.sideSlideBar}>
+        <button style={styles.closeBtn} onClick={handleCloseNav} aria-label="Close navigation">
+          ✕
+        </button>
+        <div style={styles.header}>Menu Navigasi</div>
+        {navItems.map((item, index) => (
+          <a 
+            key={index} 
+            href={item.path} 
+            className={`nav-item ${activeNavItem === item.name ? 'text-blue-500' : ''}`}
+            onClick={() => handleSelectNavItem(item)}
+            style={styles.navItem}
+          >
+            {item.icon}
+            {item.name}
+          </a>
+        ))}
+        <div style={styles.footer}>© 2024 Desa Aek Sipitudai</div>
+      </div>
     </div>
   );
 };
 
-export default MainComponent;
+export default LogoNav;

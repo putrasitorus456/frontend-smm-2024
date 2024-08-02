@@ -8,6 +8,8 @@ import { faMapMarkerAlt, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Copyright from '../components/copyright';
 import MapComponent from '../components/mapcomponent';
 
+console.log("FasumPage component rendered");
+
 const MotionSection = ({ children, delay = 0.2, duration = 0.75 }) => {
   const { ref, inView } = useInView({
     triggerOnce: false,
@@ -193,7 +195,7 @@ function FacilitiesOverview() {
   );
 }
 
-const MainComponent = () => {
+const FasumPage = () => {
   return (
     <div className="flex flex-col bg-white">
       <Header />
@@ -213,4 +215,4 @@ const MainComponent = () => {
   );
 };
 
-export default MainComponent;
+export default FasumPage;

@@ -6,6 +6,8 @@ import CopyrightSection from '../components/copyright';
 import { motion } from 'framer-motion';
 import LogoNav from '../components/logonav';
 
+console.log("NewsListPage component rendered");
+
 const ImmediateMotionSection = ({ children, delay = 0.2, duration = 0.75 }) => (
   <motion.section
     initial={{ opacity: 0, y: 20, scale: 0.95 }}

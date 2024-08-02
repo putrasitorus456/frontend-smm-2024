@@ -1,5 +1,7 @@
 import React from 'react';
 
+console.log("DocumentPage component rendered");
+
 function DocumentPage() {
   return (
     <div>

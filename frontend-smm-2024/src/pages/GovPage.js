@@ -5,6 +5,8 @@ import Header from '../components/header';
 import LogoNav from '../components/logonav';
 import Copyright from '../components/copyright';
 
+console.log("GovPage component rendered");
+
 const MotionSection = ({ children, delay = 0.2, duration = 0.75 }) => { // Mengurangi durasi menjadi 0.5 detik
   const { ref, inView } = useInView({
     triggerOnce: false,
@@ -36,7 +38,7 @@ function ImageDisplay() {
   );
 }
 
-const MainComponent = () => {
+const GovPage = () => {
   return (
     <div className="flex flex-col bg-white">
       <Header />
@@ -64,4 +66,4 @@ const MainComponent = () => {
   );
 };
 
-export default MainComponent;
+export default GovPage;
