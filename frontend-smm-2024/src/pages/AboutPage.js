@@ -42,8 +42,8 @@ const SidebarItem = ({ label, isActive, onClick }) => {
 const ContentSection = ({ activeItem, handleSidebarToggle, isSidebarOpen }) => {
   const content = {
     Deskripsi: {
-      text: 'Penjelasan singkat tentang Desa Aek Sipitudai...',
-      img: 'https://cdn.builder.io/api/v1/image/assets/TEMP/e2fe527f67ecd2e9b95ba40b56ccbb130cac5614535c98b4aa50245bc947a691?apiKey=7fd2b033b9574f39882fe9ef4728cd45'
+      text: 'Desa Limbong Aek Sipitudai mayoritas dihuni suku Batak dengan marga Limbong. Menurut cerita rakyat, marga ini berasal dari keturunan Si Raja Batak melalui Guru Tatea Bulan, yakni Limbong Mulana. Limbong Mulana pada saat itu dikisahkan memiliki seorang anak bernama Raja Limbong dan cucu bernama Palu Onggang dan Langgat Limbong. Berdasarkan keterangan Op. Bona Br. Sihotang dalam Silitonga (2017), generasi kedua Limbong Mulana, Langgat Limbong, haus. Dia membuat tujuh lubang tanah dengan tongkat, berharap air keluar.',
+      img: 'https://cdn.builder.io/api/v1/image/assets/TEMP/f97acf7b1170f383226b496ec293fbda4f44d8dfb310fa0071d84079acf96cc5?apiKey=7fd2b033b9574f39882fe9ef4728cd45&'
     },
     Sejarah: {
       text: 'Sejarah singkat Desa Aek Sipitudai...',
@@ -79,12 +79,12 @@ const ContentSection = ({ activeItem, handleSidebarToggle, isSidebarOpen }) => {
     <article className="flex flex-col ml-5 w-[82%] max-md:ml-0 max-md:w-full">
       <div className="relative flex flex-col grow px-6 py-5 w-full h-full bg-white shadow-[0_2px_10px_rgba(0,0,0,0.2)] max-md:px-5 max-md:mt-9 max-md:max-w-full text-sm">
         <button
-          className="absolute top-3 right-3 m-2 text-indigo-900 focus:outline-none md:hidden text-2xl"
+          className="absolute top-3 right-3 m-2 text-indigo-900 focus:outline-none md:hidden text-2xl flex items-center"
           onClick={handleSidebarToggle}
           aria-label="Toggle sidebar"
           aria-expanded={isSidebarOpen}
         >
-          ▼
+          ☰
         </button>
         <div className="flex gap-5 w-full h-full max-md:flex-col">
           <div className="flex flex-col w-full h-full max-md:ml-0 max-md:w-full">
@@ -203,7 +203,9 @@ const MainComponent = () => {
       >
         <LogoNav />
       </motion.div>
+      <MotionSection>
       <ExploreState />
+      </MotionSection>
       <Copyright />
     </div>
   );

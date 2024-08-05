@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 function NewsCard({ category, image, imageAlt, author, date, title, caption, _id }) {
   return (
     <article className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
-      <div className="flex flex-col grow shadow-[0_2px_10px_rgba(0,0,0,0.15)] max-md:mt-6">
+      <div className="flex flex-col grow shadow-[0_2px_10px_rgba(0,0,0,0.15)] hover:shadow-[0_4px_15px_rgba(0,0,0,0.5)] transition-shadow duration-300 max-md:mt-6">
         <h3 className="px-16 py-4 text-xl font-semibold leading-8 text-center text-white whitespace-nowrap bg-indigo-900 max-md:px-5">
           {category}
         </h3>
         <div className="flex flex-col justify-center p-4 text-base font-medium leading-6 text-white bg-white">
           <div className="flex flex-col justify-center">
             <Link to={`/berita/${_id}`} className="flex overflow-hidden relative w-full aspect-[1.86]">
-              <img loading="lazy" src={image} alt={imageAlt} className="absolute inset-0" />
+              <img loading="lazy" src={image} alt={imageAlt} className="absolute inset-0 transition-transform duration-300 transform hover:scale-110" />
               <div className="absolute bottom-0 left-0 w-full px-5 py-5 bg-black bg-opacity-50">
                 {imageAlt}
               </div>
