@@ -100,7 +100,7 @@ body {
   height: 100vh; /* atau ukuran yang diinginkan */
 }
 
-.dot {
+.gg {
   width: 10px;
   height: 10px;
   background-color: #3498db;
@@ -108,11 +108,11 @@ body {
   animation: bounce 0.6s infinite alternate;
 }
 
-.dot:nth-child(2) {
+.gg:nth-child(2) {
   animation-delay: 0.2s;
 }
 
-.dot:nth-child(3) {
+.gg:nth-child(3) {
   animation-delay: 0.4s;
 }
 
@@ -126,7 +126,6 @@ body {
 .facility-card {
   position: relative;
   overflow: hidden;
-  cursor: pointer;
 }
 .facility-card img {
   transition: transform 0.3s ease;
@@ -151,4 +150,132 @@ body {
 }
 .facility-card:hover .overlay {
   opacity: 1;
+}
+
+/* Custom CSS for carousel indicators */
+.carousel .control-dots {
+  bottom: 20px; /* Ubah nilai ini untuk mengatur posisi vertikal */
+}
+
+.carousel .control-dots .dot {
+  background: rgba(255, 255, 255, 0.5); /* Warna latar belakang default */
+  width: 10px; /* Lebar bulatan indikator */
+  height: 10px; /* Tinggi bulatan indikator */
+  border-radius: 50%; /* Membuat bulatan */
+  margin: 0 5px; /* Jarak antar bulatan */
+}
+
+.carousel .control-dots .dot.selected {
+  background: #fff; /* Warna latar belakang saat terpilih */
+}
+
+/* Tambahkan kode CSS berikut ke dalam file CSS Anda */
+
+/* Overlay styling */
+.carousel .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 25px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Efek hover untuk menampilkan overlay */
+.carousel .slide:hover .overlay {
+  opacity: 1;
+}
+
+/* Efek hover untuk zoom gambar */
+.carousel .slide img {
+  transition: transform 0.3s ease;
+}
+
+.carousel .slide:hover img {
+  border-radius: 25px;
+}
+
+/* Styling untuk judul gambar di bawah carousel */
+.carousel-titles {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.carousel-titles div {
+  flex: 1;
+  text-align: center;
+}
+
+/* General arrow styling */
+.carousel .control-arrow {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Styling for the left arrow */
+.carousel .control-prev.control-arrow {
+  left: 10px;
+  top: 50%;
+}
+
+/* Styling for the right arrow */
+.carousel .control-next.control-arrow {
+  right: 10px;
+  top: 50%;
+}
+
+/* Hover effect for arrows */
+.carousel .control-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.video-wrapper {
+  position: relative;
+  height: 0;
+}
+
+.video-wrapper-yt {
+  padding-bottom: 56.25%; /* 16:9 aspect ratio for YouTube */
+}
+
+.video-wrapper-yt iframe,
+.video-wrapper-tiktok iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-wrapper-tiktok {
+  padding-bottom: 56.25%; /* Set to 16:9 aspect ratio by default for large screens */
+}
+
+@media (max-width: 767px) {
+  /* On smaller screens, adjust TikTok video aspect ratio to be more vertical */
+  .video-wrapper-tiktok {
+    padding-bottom: 125%; /* Adjust this for TikTok's vertical aspect ratio */
+  }
+}
+
+.justified-text {
+  text-align: justify;
+  text-indent: 50px; /* Sesuaikan dengan kebutuhan */
+  margin-bottom: 1.5rem; /* Memberikan jarak antar paragraf */
 }

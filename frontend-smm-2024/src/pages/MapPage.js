@@ -46,20 +46,20 @@ const SidebarItem = ({ label, isActive, onClick }) => {
 const ContentSection = ({ activeItem, handleSidebarToggle, isSidebarOpen }) => {
   const content = {
     'Batas Wilayah': {
-      text: 'Informasi tentang batas wilayah Desa Aek Sipitudai...',
-      img: 'URL_GAMBAR_BATAS_WILAYAH',
+      text: 'Desa Aek Sipitudai terletak di Kecamatan Sianjur Mula-Mula, Kabupaten Samosir, Sumatera Utara. Berdasarkan peta administratif dan kondisi geografis, desa ini memiliki batas-batas wilayah yang jelas. Di sebelah utara, desa berbatasan dengan Pusuk Buhit, sebuah kawasan pegunungan yang terkenal. Sebelah timur berbatasan dengan Desa Boho yang juga berada dalam Kecamatan Sianjur Mula-Mula. Di bagian selatan, Desa Aek Sipitudai berbatasan dengan Desa Habeahan Naburahan dan Kecamatan Harian, sedangkan di barat berbatasan dengan Desa Sarimarrhit, yang juga masih dalam kecamatan yang sama. \n Batas-batas wilayah ini menunjukkan letak strategis Desa Aek Sipitudai yang dikelilingi oleh pegunungan, hutan, dan wilayah administratif lainnya, menjadikannya bagian penting dari lanskap geografis dan sosial di Kecamatan Sianjur Mula-Mula.',
+      img: '/images/PetaBatas.png',
     },
     'Mitigasi Tanah Longsor': {
-      text: 'Informasi tentang mitigasi tanah longsor di Desa Aek Sipitudai...',
-      img: 'URL_GAMBAR_MITIGASI_TANAH_LONGSOR',
+      text: 'Desa Aek Sipitudai di Kecamatan Sianjur Mula-Mula, Kabupaten Samosir, memiliki potensi kerawanan tanah longsor yang signifikan. Berdasarkan peta kerawanan bencana longsor, wilayah desa ini dikategorikan menjadi tiga tingkat kerawanan: rendah (zona hijau), sedang (zona kuning), dan tinggi (zona merah). Daerah dengan kerawanan tinggi tersebar di bagian utara dan selatan desa, menunjukkan adanya risiko besar tanah longsor di wilayah tersebut. \n Untuk mengurangi dampak bencana, mitigasi yang tepat perlu dilakukan, seperti penanaman vegetasi penahan tanah, pembuatan terasering, serta pembangunan infrastruktur pengendali longsor. Penting bagi masyarakat setempat untuk memahami area berisiko dan mengikuti panduan mitigasi yang diberikan.',
+      img: '/images/PetaLongsor.png',
     },
     'Mitigasi Kebakaran Hutan dan Lahan': {
-      text: 'Informasi tentang mitigasi kebakaran hutan dan lahan di Desa Aek Sipitudai...',
-      img: 'URL_GAMBAR_MITIGASI_KEBAKARAN',
+      text: 'Peta kerawanan kebakaran hutan dan lahan di Desa Aek Sipitudai ini menyoroti area yang cukup rawan terhadap kebakaran, yang ditandai dengan warna kuning. Wilayah rawan ini mencakup sebagian besar area tengah desa, yang dikelilingi oleh daerah dengan vegetasi lebat. Peta ini dibuat menggunakan proyeksi Universal Transverse Mercator (UTM) dengan grid geografi UTM dan datum World Geodetic System (WGS) 1984, memberikan presisi tinggi dalam pemetaan area rawan. \n Dengan fokus pada area berwarna kuning, pihak berwenang dan masyarakat dapat merencanakan langkah-langkah pencegahan yang lebih tepat sasaran untuk meminimalkan risiko kebakaran hutan dan lahan di desa tersebut.',
+      img: '/images/PetaKarhutla.png',
     },
     'Mitigasi Banjir': {
-      text: 'Informasi tentang mitigasi banjir di Desa Aek Sipitudai...',
-      img: 'URL_GAMBAR_MITIGASI_BANJIR',
+      text: 'Peta kerawanan banjir Desa Aek Sipitudai ini mengidentifikasi tiga tingkat kerawanan banjir: sangat rawan (merah), cukup rawan (kuning), dan tidak rawan (hijau). Wilayah yang paling luas ditandai dengan warna merah, menunjukkan area yang paling rentan terhadap banjir, terutama di bagian selatan dan sebagian tengah desa. Area kuning menyebar di bagian tengah hingga ke utara, menunjukkan tingkat kerawanan yang lebih rendah dibandingkan area merah. Wilayah hijau, yang relatif kecil, berada di bagian utara dan menunjukkan area yang aman dari risiko banjir. \n Peta ini penting untuk mengidentifikasi wilayah-wilayah yang perlu mendapatkan prioritas dalam upaya mitigasi banjir. Informasi ini esensial bagi perencanaan pembangunan dan penanggulangan bencana di Desa Aek Sipitudai.',
+      img: '/images/PetaBanjir.png',
     },
   };
 
@@ -69,7 +69,7 @@ const ContentSection = ({ activeItem, handleSidebarToggle, isSidebarOpen }) => {
 
   return (
     <article className="flex flex-col ml-5 w-[82%] max-md:ml-0 max-md:w-full">
-      <div className="relative flex flex-col grow px-6 py-5 w-full h-full bg-white shadow-[0_2px_10px_rgba(0,0,0,0.2)] max-md:px-5 max-md:mt-9 max-md:max-w-full text-sm">
+      <div className="relative flex flex-col grow px-6 py-5 w-full h-full bg-white shadow-[0_2px_10px_rgba(0,0,0,0.2)] max-md:px-5 max-md:mt-3 max-md:max-w-full text-sm">
         <button
           className="absolute top-3 right-3 m-2 text-indigo-900 focus:outline-none md:hidden text-2xl flex items-center"
           onClick={handleSidebarToggle}
@@ -84,14 +84,18 @@ const ContentSection = ({ activeItem, handleSidebarToggle, isSidebarOpen }) => {
               {activeItem}
             </h3>
             <p className="mt-5 leading-7 font-sm text-stone-500 max-md:max-w-full text-sm">
-              {content[activeItem].text}
+              {content[activeItem].text.split('\n').map((paragraph, index) => (
+                <p key={index} className="justified-text">
+                  {paragraph}
+                </p>
+              ))}
             </p>
           </div>
-          <div className="flex flex-col w-full h-full items-start max-md:ml-0 max-md:w-full">
+          <div className="flex flex-col w-full h-full items-start max-md:ml-0 max-md:w-full mobile-reorder">
             <img
               loading="lazy"
               src={content[activeItem].img}
-              className="w-full h-auto aspect-[1.12] max-md:mt-10 max-md:max-w-full"
+              className="w-full h-auto aspect-[1.12] max-md:max-w-full"
               alt={activeItem}
             />
           </div>
@@ -121,8 +125,8 @@ const ExploreState = () => {
   };
 
   return (
-    <main className="flex justify-center items-center bg-white max-md:px-5">
-      <section className="flex flex-col items-center px-8 pb-20 mt-3 w-full bg-white max-w-[1399px] max-md:max-w-full">
+    <main className="flex justify-center items-center bg-white">
+      <section className="flex flex-col items-center px-8 pb-20 mt-3 w-full bg-white max-w-[1399px] max-md:max-w-full max-md:px-5">
         <h2 className="self-center text-xl font-medium text-center text-sky-500">
           Telusuri Mengenai
         </h2>

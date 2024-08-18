@@ -15,7 +15,7 @@ function NewsDetailPage() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get(`https://hvdt3sb5-5000.asse.devtunnels.ms/api/articles/${_id}`)
+    axios.get(`http://backend-smm-2024-production.up.railway.app/api/articles/${_id}`)
       .then(response => {
         const article = response.data;
         const date = new Date(article.date);
@@ -35,9 +35,9 @@ function NewsDetailPage() {
 
   if (loading) return (
     <div className="spinner gap-3">
-      <div className="dot"></div>
-      <div className="dot"></div>
-      <div className="dot"></div>
+      <div className="gg"></div>
+      <div className="gg"></div>
+      <div className="gg"></div>
     </div>
   );
   if (error) return <div>Error fetching data: {error.message}</div>;

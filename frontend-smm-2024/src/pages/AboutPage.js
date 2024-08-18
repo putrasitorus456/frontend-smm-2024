@@ -42,42 +42,42 @@ const SidebarItem = ({ label, isActive, onClick }) => {
 const ContentSection = ({ activeItem, handleSidebarToggle, isSidebarOpen }) => {
   const content = {
     Deskripsi: {
-      text: 'Desa Limbong Aek Sipitudai mayoritas dihuni suku Batak dengan marga Limbong. Menurut cerita rakyat, marga ini berasal dari keturunan Si Raja Batak melalui Guru Tatea Bulan, yakni Limbong Mulana. Limbong Mulana pada saat itu dikisahkan memiliki seorang anak bernama Raja Limbong dan cucu bernama Palu Onggang dan Langgat Limbong. Berdasarkan keterangan Op. Bona Br. Sihotang dalam Silitonga (2017), generasi kedua Limbong Mulana, Langgat Limbong, haus. Dia membuat tujuh lubang tanah dengan tongkat, berharap air keluar.',
-      img: 'https://cdn.builder.io/api/v1/image/assets/TEMP/f97acf7b1170f383226b496ec293fbda4f44d8dfb310fa0071d84079acf96cc5?apiKey=7fd2b033b9574f39882fe9ef4728cd45&'
+      text: 'Desa Aek Sipitudai merupakan sebuah desa yang terletak di Kecamatan Sianjur Mula-Mula, Kabupaten Samosir, Sumatra Utara. Nama “Aek Sipitudai” berasal dari bahasa Batak, di mana “Aek” berarti air dan “Sipitudai” berarti tujuh rasa. Nama tersebut menggambarkan warisan budaya yang dimiliki desa ini, yaitu sumber mata air tujuh rasa dan diyakini memiliki kekuatan menyembuhkan. Desa ini juga dikelilingi oleh pemandangan alam yang menakjubkan, termasuk perbukitan hijau dan Danau Toba. \n Selain itu, ladang-ladang milik masyarakat juga menjadi salah satu pemandangan alam yang mempesona. Desa Aek Sipitudai sendiri terbagi ke dalam tiga dusun, yaitu Dusun I (Saroha), Dusun II (Dosroha), dan Dusun III (Aek Baringin). Masing-masing dusun tersebut memiliki beragam komoditas yang menjadi sumber ekonomi masyarakatnya, seperti hasil pertanian, perkebunan, peternakan, dan juga perikanan.',
+      img: '/images/Homepage.png'
     },
     Sejarah: {
-      text: 'Sejarah singkat Desa Aek Sipitudai...',
-      img: 'URL_GAMBAR_SEJARAH'
+      text: 'Desa Aek Sipitudai berada di Kabupaten Samosir yang dimekarkan dari Kabupaten Toba Samosir berdasarkan Undang-undang Nomor 36 Tahun 2003. Awalnya, desa ini berada di bawah pemerintahan Kecamatan Harian di Kabupaten Tapanuli Utara (dulu Kabupaten Toba Samosir juga berada di bawah pemerintahan Kabupaten Tapanuli Utara). \n Pada tahun 1997, setelah terbentuknya Kecamatan Sianjur Mulamula, Desa Aek Sipitudai yang merupakan gabungan dari Desa Sihole, Desa Sidaguruk, dan Desa Habeahan, bergabung dengan kecamatan baru tersebut. Kemudian pada tahun 2011, Desa Habeahan pun mekar menjadi Desa Habeahan Naburahan. Saat ini, Desa Aek Sipitudai terdiri dari tiga dusun, yaitu Dosroha, Saroha, dan Aek Baringin. Dengan pembentukan dan pemekaran wilayah ini, diharapkan pembangunan dan pelaksanaan pemerintahan desa lebih efektif karena wilayah administrasi yang lebih kecil.',
+      img: '/images/Sejarah.jpg'
     },
     Penduduk: {
-      text: 'Informasi tentang keadaan penduduk di Desa Aek Sipitudai...',
-      img: 'URL_GAMBAR_PENDUDUK'
+      text: 'Desa Aek Sipitudai adalah salah satu desa yang berada di Kecamatan Sianjur Mula-Mula. Desa ini memiliki jumlah penduduk sekitar 1210 jiwa yaitu sebanyak 608 laki-laki dan 602 perempuan. Desa Aek Sipitudai terdiri dari tiga dusun, yaitu dusun I, dusun II, dan dusun III. Adapun jumlah penduduk dusun I, II, dan III secara berurutan yaitu 451, 511, dan 248 jiwa. Penduduk Desa Aek Sipitudai juga terdiri dari kalangan usia yang beragam, yaitu mulai dari usia 0 tahun hingga 94 tahun. \n Walaupun desa Aek Sipitudai didominasi oleh penduduk yang bersuku Batak, terdapat keberagaman agama yang dianut oleh penduduk tersebut, yaitu sebanyak 565 jiwa menganut agama Kristen, 641 jiwa menganut agama Katolik, dan 4 jiwa menganut agama Islam. Selain itu, penduduk juga memiliki profesi yang beragam seperti petani, wiraswasta, PNS/TNI/POLRI, karyawan swasta, bidan, dan guru. Profesi yang paling banyak dilakukan penduduk adalah petani, yaitu sebanyak 396 jiwa.',
+      img: '/images/Penduduk.jpg'
     },
     Wilayah: {
-      text: 'Informasi tentang batas wilayah Desa Aek Sipitudai...',
-      img: 'URL_GAMBAR_WILAYAH'
+      text: 'Berdasarkan peta administratif dan kondisi geografis, Desa Aek Sipitudai memiliki batas-batas wilayah yang jelas. Di sebelah utara, desa ini berbatasan dengan Pusuk Buhit, sebuah kawasan pegunungan yang terkenal dengan keindahan alam dan legenda asal-usul Batak. Sebelah timur berbatasan dengan Desa Boho yang juga berada dalam Kecamatan Sianjur Mula-Mula. Di bagian selatan, Desa Aek Sipitudai berbatasan dengan Desa Habeahan Naburahan dan Kecamatan Harian, sedangkan di barat berbatasan dengan Desa Sarimarrhit, yang juga masih dalam kecamatan yang sama. \n Desa ini memiliki topografi yang bervariasi, dengan sebagian besar wilayahnya berupa perbukitan dan lembah yang subur, cocok untuk pertanian. Selain itu, sumber daya air yang melimpah dari mata air alami menjadikan desa ini memiliki potensi untuk pengembangan sektor pertanian dan pariwisata. Tradisi dan budaya Batak masih sangat kental di desa ini, tercermin dalam kehidupan sehari-hari warganya yang masih mempertahankan adat istiadat .',
+      img: '/images/PetaBatas.jpg'
     },
     Lingkungan: {
-      text: 'Informasi tentang keadaan lingkungan di Desa Aek Sipitudai...',
-      img: 'URL_GAMBAR_LINGKUNGAN'
+      text: 'Desa Aek Sipitudai, terletak di Kecamatan Sianjur Mula-Mula, Kabupaten Samosir, Sumatra Utara, dikenal dengan keindahan alamnya yang menakjubkan. Desa ini dikelilingi oleh perbukitan hijau dan terletak dekat dengan Danau Toba, menyediakan pemandangan alam yang indah. Selain itu, desa ini memiliki topografi bervariasi dengan sebagian besar wilayah berupa perbukitan dan lembah yang subur, cocok untuk pertanian. Mata air alami yang melimpah, termasuk sumber mata air tujuh rasa yang legendaris, menambah keunikan lingkungan desa ini. \n Dusun-dusunnya, yaitu Saroha, Dosroha, dan Aek Baringin, masing-masing memiliki komoditas pertanian, perkebunan, peternakan, dan perikanan yang menjadi sumber ekonomi utama. Potensi alam yang luar biasa ini menjadikan Desa Aek Sipitudai cocok untuk pengembangan sektor pertanian dan pariwisata.',
+      img: '/images/Lingkungan.JPG'
     },
     Komoditas: {
-      text: 'Informasi komoditas Desa Aek Sipitudai...',
-      img: 'URL_GAMBAR_KOMODITAS'
+      text: 'Desa Aek Sipitudai merupakan salah satu desa yang memiliki beragam komoditas yang menjadi sumber perekonomian dan identitas desa ini. Komoditas tersebut meliputi komoditas pertanian, perkebunan, peternakan, dan perikanan. Komoditas pertanian di Desa Aek Sipitudai meliputi padi, bawang, jagung, dan cabai. Komoditas perkebunan meliputi kopi dan alpukat yang terdapat di daerah dataran tinggi.  Komoditas peternakan meliputi sapi dan kerbau yang biasanya dijadikan hewan peliharaan oleh masyarakat. Komoditas perikanan yang terdapat di desa ini yaitu lele. \n Keanekaragaman komoditas yang ada di Desa Aek Sipitudai menjadi bukti kekayaan alam yang dimiliki desa ini. Potensi yang luar biasa ini perlu dikembangkan agar terus menjadi kebanggaan dan identitas desa, serta membawa kemakmuran bagi seluruh warganya.',
+      img: '/images/Komoditas.jpg'
     },
     Dusun: {
-      text: 'Informasi tentang dusun-dusun di Desa Aek Sipitudai...',
-      img: 'URL_GAMBAR_DUSUN'
+      text: 'Desa Aek Sipitudai terbagi menjadi tiga  dusun, yaitu Dusun I (Saroha), Dusun II (Dosroha), Dusun III (Aek Baringin). Nama tiap dusun memiliki arti yang berbeda-beda, Dusun Saroha berarti “seia”, Dusun Dosroha berarti “sepakat”, dan Dusun Aek Baringin berarti “air baringin”. \n Wilayah daerah yang termasuk ke dalam dusun Saroha yaitu Onan Limbong, Lumban Nabolak I, Pangkirapan, Sosor Galung, Limban Hasahatan, Lape, Sosor Silinjuang, dan Parombahan. Dusun Dosroha terdiri dari beberapa wilayah daerah yaitu Lumban Sihole, Lumban Raja, Lumban Sidaguruk, Lumban Godang, Simanampang, Simanjorang, Sosor (Lumban Nabolak II), Tano Lapang, Lumban Tonga-Tonga, dan Lumban Sitinjak. Wilayah daerah Dusun III (Aek Baringin) terdiri dari Batu Palakka, Aek Baringin, Pea, dan Sibarani.',
+      img: '/images/Dusun.JPG'
     },
     Tradisi: {
-      text: 'Informasi tentang tradisi di Desa Aek Sipitudai...',
-      img: 'URL_GAMBAR_TRADISI'
+      text: 'Desa Aek Sipitudai, yang kaya akan budaya dan tradisi Batak, dikenal dengan berbagai perayaan yang menggambarkan kekuatan dan kebersamaan masyarakatnya. Setiap pencapaian penting, seperti tersedianya air bersih atau panen yang melimpah, dirayakan dengan tradisi syukuran yang dihadiri oleh seluruh warga desa, termasuk tokoh-tokoh penting. Tradisi ini tidak hanya menjadi simbol rasa syukur, tetapi juga menjadi ajang untuk mempererat tali persaudaraan dan menjaga nilai-nilai kebersamaan.\n Perayaan-perayaan ini, yang terus dipertahankan meskipun zaman telah berubah, menunjukkan bagaimana masyarakat Desa Aek Sipitudai tetap menghormati warisan leluhur mereka, menghubungkan masa lalu dengan masa kini, dan merayakan berkah dengan cara yang penuh makna. Tradisi ini memastikan bahwa setiap nikmat yang diterima tidak hanya disyukuri secara pribadi, tetapi juga dirayakan bersama-sama dalam semangat gotong royong yang menjadi ciri khas desa ini.',
+      img: '/images/Adat.jpg'
     }
   };
 
   return (
     <article className="flex flex-col ml-5 w-[82%] max-md:ml-0 max-md:w-full">
-      <div className="relative flex flex-col grow px-6 py-5 w-full h-full bg-white shadow-[0_2px_10px_rgba(0,0,0,0.2)] max-md:px-5 max-md:mt-9 max-md:max-w-full text-sm">
+      <div className="relative flex flex-col grow px-6 py-5 w-full h-full bg-white shadow-[0_2px_10px_rgba(0,0,0,0.2)] max-md:px-5 max-md:mt-3 max-md:max-w-full text-sm">
         <button
           className="absolute top-3 right-3 m-2 text-indigo-900 focus:outline-none md:hidden text-2xl flex items-center"
           onClick={handleSidebarToggle}
@@ -86,20 +86,24 @@ const ContentSection = ({ activeItem, handleSidebarToggle, isSidebarOpen }) => {
         >
           ☰
         </button>
-        <div className="flex gap-5 w-full h-full max-md:flex-col">
+        <div className="flex gap-10 w-full h-full max-md:flex-col max-md:gap-3">
           <div className="flex flex-col w-full h-full max-md:ml-0 max-md:w-full">
             <h3 className="text-xl font-semibold leading-8 text-indigo-900 max-md:max-w-full">
               {activeItem}
             </h3>
-            <p className="mt-5 leading-7 font-sm text-stone-500 max-md:max-w-full text-sm">
-              {content[activeItem].text}
-            </p>
+            <div className="mt-5 leading-7 font-sm text-stone-500 max-md:max-w-full text-sm">
+              {content[activeItem].text.split('\n').map((paragraph, index) => (
+                <p key={index} className="justified-text">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
           <div className="flex flex-col w-full h-full items-start max-md:ml-0 max-md:w-full">
             <img
               loading="lazy"
               src={content[activeItem].img}
-              className="w-full h-auto aspect-[1.12] max-md:mt-10 max-md:max-w-full"
+              className="w-full h-full object-cover shadow-[0_2px_10px_rgba(0,0,0,0.5)] max-md:mt-0 max-md:max-w-full"
               alt={activeItem}
             />
           </div>
@@ -133,8 +137,8 @@ const ExploreState = () => {
   };
 
   return (
-    <main className="flex justify-center items-center bg-white max-md:px-5">
-      <section className="flex flex-col items-center px-8 pb-20 mt-3 w-full bg-white max-w-[1399px] max-md:max-w-full">
+    <main className="flex justify-center items-center bg-white">
+      <section className="flex flex-col items-center px-8 pb-20 mt-3 w-full bg-white max-w-[1399px] max-md:max-w-full max-md:px-5">
         <h2 className="self-center text-xl font-medium text-center text-sky-500">
           Mengenal Lebih Dalam
         </h2>

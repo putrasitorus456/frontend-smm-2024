@@ -30,8 +30,8 @@ function ImageDisplay() {
     <main className="flex justify-center items-center px-16 py-10 bg-white max-md:px-5">
       <img
         loading="lazy"
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/8d6d17327d2d9ba2095acd3f3dbe4a5f92c2eac774143c1453438b2518190b74?apiKey=7fd2b033b9574f39882fe9ef4728cd45&&apiKey=7fd2b033b9574f39882fe9ef4728cd45"
-        alt=""
+        src="/images/Struktur.jpg"
+        alt="Gambar Struktur Pemerintahan"
         className="mt-5 w-full aspect-[1.75] max-w-[1332px] max-md:max-w-full"
       />
     </main>

@@ -25,7 +25,7 @@ function NewsListPage() {
 
   useEffect(() => {
     let isMounted = true;
-    axios.get('https://hvdt3sb5-5000.asse.devtunnels.ms/api/articles')
+    axios.get('http://backend-smm-2024-production.up.railway.app/api/articles')
       .then(response => {
         if (isMounted) {
           const sortedData = response.data.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -55,9 +55,9 @@ function NewsListPage() {
 
   if (loading) return (
     <div className="spinner gap-3">
-      <div className="dot"></div>
-      <div className="dot"></div>
-      <div className="dot"></div>
+      <div className="gg"></div>
+      <div className="gg"></div>
+      <div className="gg"></div>
     </div>
   );
   if (error) return <div>Error fetching data: {error.message}</div>;
