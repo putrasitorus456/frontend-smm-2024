@@ -118,7 +118,7 @@ const HeroSection = () => {
     },
     {
       id: 17,
-      src: "/images/kantor.png",
+      src: "/images/Kantor.png",
       title: "Kantor Kepala Desa Aek Sipitudai",
       description: ""
     },
@@ -220,7 +220,7 @@ const HeroSection = () => {
     },
     {
       id: 34,
-      src: "/images/pasar.png",
+      src: "/images/Pasar.png",
       title: "Pasar Tradisional Limbong",
       description: ""
     },
@@ -268,7 +268,7 @@ const HeroSection = () => {
     },
     {
       id: 42,
-      src: "/images/puskesmas.png",
+      src: "/images/Puskesmas.png",
       title: "Puskesmas Limbong",
       description: ""
     },
@@ -346,7 +346,7 @@ const HeroSection = () => {
     },
     {
       id: 55,
-      src: "/images/toga.png",
+      src: "/images/TOGA.png",
       title: "Revitalisasi Taman TOGA",
       description: ""
     },
