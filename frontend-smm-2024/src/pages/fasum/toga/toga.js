@@ -36,7 +36,7 @@ const ImageGallery = () => {
 
   useEffect(() => {
     // Fetch data from API
-    fetch('http://backend-smm-2024-production.up.railway.app/api/toga/')
+    fetch('https://backend-smm-2024-production.up.railway.app/api/toga/')
       .then(response => response.json())
       .then(data => {
         // Map data to desired structure

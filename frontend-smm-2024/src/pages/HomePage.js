@@ -143,7 +143,7 @@ function NewsSection() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('http://backend-smm-2024-production.up.railway.app/api/articles')
+    axios.get('https://backend-smm-2024-production.up.railway.app/api/articles')
       .then(response => {
         const sortedData = response.data.sort((a, b) => new Date(b.date) - new Date(a.date));
         const formattedData = sortedData.slice(0, 3).map(article => {

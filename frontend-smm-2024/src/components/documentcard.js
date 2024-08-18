@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function DocumentCard({ title, content, filePath, thumbnail, createdAt, _id }) {
-  const baseURL = 'http://backend-smm-2024-production.up.railway.app/'; // Sesuaikan dengan URL server Anda
+  const baseURL = 'https://backend-smm-2024-production.up.railway.app/'; // Sesuaikan dengan URL server Anda
   const thumbnailUrl = `${baseURL}${thumbnail}`;
   const fileUrl = `${baseURL}${filePath}`;
 

@@ -25,7 +25,7 @@ function NewsListPage() {
 
   useEffect(() => {
     let isMounted = true;
-    axios.get('http://backend-smm-2024-production.up.railway.app/api/articles')
+    axios.get('https://backend-smm-2024-production.up.railway.app/api/articles')
       .then(response => {
         if (isMounted) {
           const sortedData = response.data.sort((a, b) => new Date(b.date) - new Date(a.date));

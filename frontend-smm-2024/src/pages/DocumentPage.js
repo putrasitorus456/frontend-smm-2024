@@ -13,7 +13,7 @@ function DocumentListPage() {
 
   useEffect(() => {
     let isMounted = true;
-    axios.get('http://backend-smm-2024-production.up.railway.app/api/documents')
+    axios.get('https://backend-smm-2024-production.up.railway.app/api/documents')
       .then(response => {
         if (isMounted) {
           const sortedData = response.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));

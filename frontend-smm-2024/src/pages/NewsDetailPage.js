@@ -15,7 +15,7 @@ function NewsDetailPage() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://backend-smm-2024-production.up.railway.app/api/articles/${_id}`)
+    axios.get(`https://backend-smm-2024-production.up.railway.app/api/articles/${_id}`)
       .then(response => {
         const article = response.data;
         const date = new Date(article.date);

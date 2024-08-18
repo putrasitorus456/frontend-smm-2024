@@ -14,7 +14,7 @@ function TogaDetailPage() {
 
   useEffect(() => {
     axios
-      .get(`http://backend-smm-2024-production.up.railway.app/api/toga/${_id}`)
+      .get(`https://backend-smm-2024-production.up.railway.app/api/toga/${_id}`)
       .then((response) => {
         const togaData = response.data;
         const date = new Date(togaData.date);
