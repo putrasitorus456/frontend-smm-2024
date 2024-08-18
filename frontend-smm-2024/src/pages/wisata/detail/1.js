@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../../../components/header';
 import CopyrightSection from '../../../components/copyright';
 import { motion } from 'framer-motion';
@@ -14,7 +14,7 @@ const sections = [
       'Aek Sipitu Dai merupakan sumber mata air yang terletak di Desa Aek Sipitu Dai, Kecamatan Sianjur Mula-Mula, Kabupaten Samosir. Dalam Bahasa Indonesia Aek Sipitu Dai memiliki arti air tujuh rasa, dimana terdapat tujuh buah pancuran yang memancurkan air dengan karakteristik rasa yang berbeda-beda.',
       'Masyarakat sekitar meyakini bahwa mata air ini memiliki keterkaitan dengan sejarah leluhur bangsa batak, sehingga Aek Sipitu Dai disakralkan oleh masyarakat sekitar.'
     ],
-    imagePath: '/images/Wisata/apaitu.png',
+    imagePath: '/images/apaitu.png',
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const sections = [
     section: 'Area Pemandian',
     description: [`Aek Sipitu Dai terdiri dari 3 area yang pertama area pemandian untuk perempuan dimana terdapat 4 pancuran, area pemandian laki-laki dengan 3 pancuran, serta area spiritual yang digunakan untuk melakukan partonggoan (berdoa atau melakukan kegiatan spiritual) kepada leluhur.`,
       'Seluruh pengunjung dipersilahkan untuk masuk ke area pemandian perempuan dan pemandian laki-laki, tetapi area spiritual hanya diperuntukan bagi pengunjung yang ingin berdoa dengan didampingi oleh petugas.'],
-    imagePath: '/images/Wisata/pemandian.png',
+    imagePath: '/images/pemandian.png',
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const sections = [
     description: [`Sejarah Aek Sipitu Dai bermula ketika Ompu Limbong Mulana dikisahkan memiliki seorang anak bernama Raja Limbong dan cucu yang salah satunya bernama Langgat Limbong. Dikisahkan bahwa suatu ketika Ompu Langgat Limbong yang sedang berada di kaki pusuk buhit merasa haus. Karena kehausan ia membuat tujuh lubang tanah dengan tongkatnya, dengan harapan bahwa lubang tersebut akan mengeluarkan air.`,
       'Ompu Langgat meminta dan berdoa kepada Debata Mulajadi Nabolon agar diberikan air dari lubang-lubang tersebut. Setelah ia berdoa muncullah air dari lubang-lubang tersebut, hingga menciptakan Aek Sipitu Dai, mata air sakral dengan tujuh rasa air yang berbeda.'
     ],
-    imagePath: '/images/Wisata/sejarah.png',
+    imagePath: '/images/sejarah.png',
   },
   {
     id: 4,
@@ -54,7 +54,7 @@ const sections = [
       'Basuh muka sebanyak tiga kali.',
       'Kumur dan buang air sebanyak tiga kali.'
     ],
-    imagePath: '/images/Wisata/cewe.png',
+    imagePath: '/images/cewe.png',
   },
   {
     id: 5,
@@ -75,7 +75,7 @@ const sections = [
       'Basuh muka sebanyak tiga kali.',
       'Kumur dan buang air sebanyak tiga kali.'
     ],
-    imagePath: '/images/Wisata/cowo.png',
+    imagePath: '/images/cowo.png',
   },
 ];
 
@@ -89,7 +89,7 @@ const sectionsEnglish = [
       'Aek Sipitu Dai is a water source located in Aek Sipitu Dai Village, Sianjur Mula-Mula District, Samosir Regency. In Indonesian, Aek Sipitu Dai means water with seven tastes, where there are seven fountains that produce water with different taste characteristics.',
       'The local community believes that this spring is related to the history of the Batak ancestors, making Aek Sipitu Dai sacred to the surrounding community.'
     ],
-    imagePath: '/images/Wisata/apaitu.png',
+    imagePath: '/images/apaitu.png',
   },
   {
     id: 2,
@@ -100,7 +100,7 @@ const sectionsEnglish = [
       'Aek Sipitu Dai consists of three areas: the women\'s bathing area with four fountains, the men\'s bathing area with three fountains, and the spiritual area used for partonggoan (prayer or spiritual activities) to the ancestors.',
       'All visitors are allowed to enter the women\'s and men\'s bathing areas, but the spiritual area is only for visitors who wish to pray, accompanied by staff.'
     ],
-    imagePath: '/images/Wisata/pemandian.png',
+    imagePath: '/images/pemandian.png',
   },
   {
     id: 3,
@@ -111,7 +111,7 @@ const sectionsEnglish = [
       'The history of Aek Sipitu Dai begins when Ompu Limbong Mulana is said to have a son named Raja Limbong and a grandson, one of whom is named Langgat Limbong. It is told that one day Ompu Langgat Limbong, who was at the foot of Pusuk Buhit, felt thirsty. Because of his thirst, he made seven holes in the ground with his stick, hoping that the holes would produce water.',
       'Ompu Langgat prayed to Debata Mulajadi Nabolon to be given water from the holes. After he prayed, water emerged from the holes, creating Aek Sipitu Dai, a sacred spring with seven different tastes of water.'
     ],
-    imagePath: '/images/Wisata/sejarah.png',
+    imagePath: '/images/sejarah.png',
   },
   {
     id: 4,
@@ -132,7 +132,7 @@ const sectionsEnglish = [
       'Splash your face three times.',
       'Rinse your mouth and spit out water three times.'
     ],
-    imagePath: '/images/Wisata/cewe.png',
+    imagePath: '/images/cewe.png',
   },
   {
     id: 5,
@@ -153,13 +153,23 @@ const sectionsEnglish = [
       'Splash your face three times.',
       'Rinse your mouth and spit out water three times.'
     ],
-    imagePath: '/images/Wisata/cowo.png',
+    imagePath: '/images/cowo.png',
   },
 ];
 
 function TogaDetailPage() {
   const [language, setLanguage] = useState('id');
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 5000); // Delay 500ms atau sesuai kebutuhan
+
+    return () => clearTimeout(timer); // Bersihkan timeout saat komponen unmount
+  }, [currentSectionIndex, language]);
 
   const handleNext = () => {
     if (currentSectionIndex < sections.length - 1) {
@@ -240,6 +250,11 @@ function TogaDetailPage() {
         )}
       </button>
     </div>
+        {isLoading ? (
+          <div className="flex justify-center items-center h-64">
+            <p className="text-xl text-gray-500">Loading...</p>
+          </div>
+        ) : (
         <div className="mb-10 max-md:mb-0 flex flex-col w-full max-w-[1350px] max-md:max-w-full">
           <header className="flex flex-col self-center text-center max-md:max-w-full">
             <h2 className="self-center text-xl font-medium leading-1 text-sky-500">
@@ -294,6 +309,7 @@ function TogaDetailPage() {
             </div>
           </div>
         </div>
+        )}
         <div className="flex flex-col md:flex-row justify-between w-full max-w-[1350px] mt-6">
           <button
             onClick={handleBefore}

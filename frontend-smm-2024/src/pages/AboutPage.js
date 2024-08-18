@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Header from '../components/header';
@@ -39,6 +39,16 @@ const SidebarItem = ({ label, isActive, onClick }) => {
   );
 };
 
+const Spinner = () => (
+  <motion.div
+    className="w-12 h-12 border-4 border-t-4 border-gray-200 rounded-full animate-spin"
+    style={{ borderTopColor: '#3498db' }}
+    initial={{ rotate: 0 }}
+    animate={{ rotate: 360 }}
+    transition={{ repeat: Infinity, duration: 1 }}
+  />
+);
+
 const ContentSection = ({ activeItem, handleSidebarToggle, isSidebarOpen }) => {
   const content = {
     Deskripsi: {
@@ -75,6 +85,20 @@ const ContentSection = ({ activeItem, handleSidebarToggle, isSidebarOpen }) => {
     }
   };
 
+  
+  const [currentContent, setCurrentContent] = useState(content[activeItem]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    const timer = setTimeout(() => {
+      setCurrentContent(content[activeItem]);
+      setIsLoading(false);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, [activeItem]);
+
   return (
     <article className="flex flex-col ml-5 w-[82%] max-md:ml-0 max-md:w-full">
       <div className="relative flex flex-col grow px-6 py-5 w-full h-full bg-white shadow-[0_2px_10px_rgba(0,0,0,0.2)] max-md:px-5 max-md:mt-3 max-md:max-w-full text-sm">
@@ -92,20 +116,32 @@ const ContentSection = ({ activeItem, handleSidebarToggle, isSidebarOpen }) => {
               {activeItem}
             </h3>
             <div className="mt-5 leading-7 font-sm text-stone-500 max-md:max-w-full text-sm">
-              {content[activeItem].text.split('\n').map((paragraph, index) => (
-                <p key={index} className="justified-text">
-                  {paragraph}
-                </p>
-              ))}
+              {isLoading ? (
+                <div className="shimmer h-[500px] w-full bg-gray-300 rounded-md max-md:h-[100px]"></div>
+              ) : (
+                currentContent.text.split('\n').map((paragraph, index) => (
+                  <p key={index} className="justified-text">
+                    {paragraph}
+                  </p>
+                ))
+              )}
             </div>
           </div>
           <div className="flex flex-col w-full h-full items-start max-md:ml-0 max-md:w-full">
-            <img
-              loading="lazy"
-              src={content[activeItem].img}
-              className="w-full h-full object-cover shadow-[0_2px_10px_rgba(0,0,0,0.5)] max-md:mt-0 max-md:max-w-full"
-              alt={activeItem}
-            />
+            {isLoading ? (
+              <div className="w-full h-full flex items-center justify-center">
+                <Spinner />
+              </div>
+            ) : (
+              <motion.img
+                src={currentContent.img}
+                className="w-full h-full object-cover shadow-[0_2px_10px_rgba(0,0,0,0.5)] max-md:mt-0 max-md:max-w-full"
+                alt={activeItem}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              />
+            )}
           </div>
         </div>
       </div>

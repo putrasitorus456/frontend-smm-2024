@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Header from '../components/header';
@@ -23,6 +23,16 @@ const MotionSection = ({ children, delay = 0.2, duration = 0.75 }) => {
   );
 };
 
+const Spinner = () => (
+  <motion.div
+    className="w-12 h-12 border-4 border-t-4 border-gray-200 rounded-full animate-spin"
+    style={{ borderTopColor: '#3498db' }}
+    initial={{ rotate: 0 }}
+    animate={{ rotate: 360 }}
+    transition={{ repeat: Infinity, duration: 1 }}
+  />
+);
+
 const SidebarItem = ({ label, isActive, onClick }) => {
   const baseClasses = 'px-5 py-6 whitespace-normal bg-white border-b text-[#666666] border-blue-50 max-md:px-5 text-[15px] cursor-pointer hover:bg-sky-100';
   const activeClasses = 'flex gap-5 justify-between py-5 pl-5 font-[12px] text-white whitespace-normal bg-sky-500 border-b border-gray-300 max-md:pl-5';
@@ -44,6 +54,8 @@ const SidebarItem = ({ label, isActive, onClick }) => {
 };
 
 const ContentSection = ({ activeItem, handleSidebarToggle, isSidebarOpen }) => {
+  const [isLoading, setLoading] = useState(true);
+
   const content = {
     'Batas Wilayah': {
       text: 'Desa Aek Sipitudai terletak di Kecamatan Sianjur Mula-Mula, Kabupaten Samosir, Sumatera Utara. Berdasarkan peta administratif dan kondisi geografis, desa ini memiliki batas-batas wilayah yang jelas. Di sebelah utara, desa berbatasan dengan Pusuk Buhit, sebuah kawasan pegunungan yang terkenal. Sebelah timur berbatasan dengan Desa Boho yang juga berada dalam Kecamatan Sianjur Mula-Mula. Di bagian selatan, Desa Aek Sipitudai berbatasan dengan Desa Habeahan Naburahan dan Kecamatan Harian, sedangkan di barat berbatasan dengan Desa Sarimarrhit, yang juga masih dalam kecamatan yang sama. \n Batas-batas wilayah ini menunjukkan letak strategis Desa Aek Sipitudai yang dikelilingi oleh pegunungan, hutan, dan wilayah administratif lainnya, menjadikannya bagian penting dari lanskap geografis dan sosial di Kecamatan Sianjur Mula-Mula.',
@@ -63,8 +75,20 @@ const ContentSection = ({ activeItem, handleSidebarToggle, isSidebarOpen }) => {
     },
   };
 
+  useEffect(() => {
+    // Reset loading state to true when activeItem changes
+    setLoading(true);
+
+    // Simulate loading delay
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, [activeItem]);
+
   if (!content[activeItem]) {
-    return null; // atau tambahkan pengendalian error di sini
+    return null; // or handle error here
   }
 
   return (
@@ -84,20 +108,30 @@ const ContentSection = ({ activeItem, handleSidebarToggle, isSidebarOpen }) => {
               {activeItem}
             </h3>
             <p className="mt-5 leading-7 font-sm text-stone-500 max-md:max-w-full text-sm">
-              {content[activeItem].text.split('\n').map((paragraph, index) => (
-                <p key={index} className="justified-text">
-                  {paragraph}
-                </p>
-              ))}
+              {isLoading ? (
+                <div className="shimmer h-[500px] w-full bg-gray-300 rounded-md max-md:h-[100px]"></div>
+              ) : (
+                content[activeItem].text.split('\n').map((paragraph, index) => (
+                  <p key={index} className="justified-text">
+                    {paragraph}
+                  </p>
+                ))
+              )}
             </p>
           </div>
           <div className="flex flex-col w-full h-full items-start max-md:ml-0 max-md:w-full mobile-reorder">
-            <img
-              loading="lazy"
-              src={content[activeItem].img}
-              className="w-full h-auto aspect-[1.12] max-md:max-w-full"
-              alt={activeItem}
-            />
+            {isLoading ? (
+              <div className="w-full h-full flex items-center justify-center">
+                <Spinner />
+              </div>
+            ) : (
+              <img
+                loading="lazy"
+                src={content[activeItem].img}
+                className="w-full h-auto aspect-[1.12] max-md:max-w-full"
+                alt={activeItem}
+              />
+            )}
           </div>
         </div>
       </div>

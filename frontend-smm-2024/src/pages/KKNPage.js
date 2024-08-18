@@ -22,7 +22,7 @@ const HeroSection = () => {
   const images = [
     {
       id: 1,
-      src: "/images/kkn/koordinasi1.png",
+      src: "/images/koordinasi1.png",
       title: "Koordinasi dengan Perangkat Desa",
       description: ""
     },
@@ -34,349 +34,349 @@ const HeroSection = () => {
     },
     {
       id: 3,
-      src: "/images/kkn/amplas.png",
+      src: "/images/amplas.png",
       title: "Revitalisasi Papan Penanda Wisata",
       description: ""
     },
     {
       id: 4,
-      src: "/images/kkn/anak-anak.png",
+      src: "/images/anak-anak.png",
       title: "Anak-anak Desa Aek Sipitudai",
       description: ""
     },
     {
       id: 5,
-      src: "/images/kkn/banner.png",
+      src: "/images/banner.png",
       title: "Kegiatan Syukuran Air Bersih",
       description: ""
     },
     {
       id: 6,
-      src: "/images/kkn/bawang.png",
+      src: "/images/bawang.png",
       title: "Penanaman Bawang bersama Warga",
       description: ""
     },
     {
       id: 7,
-      src: "/images/kkn/bersihintoga.png",
+      src: "/images/bersihintoga.png",
       title: "Revitalisasi Taman TOGA",
       description: ""
     },
     {
       id: 8,
-      src: "/images/kkn/bisdig.png",
+      src: "/images/bisdig.png",
       title: "Sosialisasi UMKM menjadi Bisnis Digital",
       description: ""
     },
     {
       id: 9,
-      src: "/images/kkn/ecoprint.png",
+      src: "/images/ecoprint.png",
       title: "Pengenalan Ecoprint bagi Siswa SD",
       description: ""
     },
     {
       id: 10,
-      src: "/images/kkn/gapura2.png",
+      src: "/images/gapura2.png",
       title: "Pemasangan Gapura 17-an",
       description: ""
     },
     {
       id: 11,
-      src: "/images/kkn/gereja.png",
+      src: "/images/gereja.png",
       title: "Petugas Ibadah Gereja Katolik",
       description: ""
     },
     {
       id: 12,
-      src: "/images/kkn/gorong.png",
+      src: "/images/gorong.png",
       title: "Gotong Royong Pembersihan Gorong-gorong",
       description: ""
     },
     {
       id: 13,
-      src: "/images/kkn/gotongroyong.png",
+      src: "/images/gotongroyong.png",
       title: "Kegiatan Jumat Bersih",
       description: ""
     },
     {
       id: 14,
-      src: "/images/kkn/gunung.png",
+      src: "/images/gunung.png",
       title: "Pemandangan Gunung di Aek Sipitudai",
       description: ""
     },
     {
       id: 15,
-      src: "/images/kkn/informasi2.png",
+      src: "/images/informasi2.png",
       title: "Revitalisasi Papan Penanda Wisata",
       description: ""
     },
     {
       id: 16,
-      src: "/images/kkn/informasi.png",
+      src: "/images/informasi.png",
       title: "Revitalisasi Papan Penanda Wisata",
       description: ""
     },
     {
       id: 17,
-      src: "/images/kkn/kantor.png",
+      src: "/images/kantor.png",
       title: "Kantor Kepala Desa Aek Sipitudai",
       description: ""
     },
     {
       id: 18,
-      src: "/images/kkn/lapkursi.png",
+      src: "/images/lapkursi.png",
       title: "Persiapan Kegiatan Syukuran Air Bersih",
       description: ""
     },
     {
       id: 19,
-      src: "/images/kkn/lele.png",
+      src: "/images/lele.png",
       title: "Demonstrasi Pembuatan Nugget Ikan",
       description: ""
     },
     {
       id: 20,
-      src: "/images/kkn/lele2.png",
+      src: "/images/lele2.png",
       title: "Demonstrasi Pembuatan Nugget Ikan",
       description: ""
     },
     {
       id: 21,
-      src: "/images/kkn/masanggapura.png",
+      src: "/images/masanggapura.png",
       title: "Pemasangan Gapura 17-an",
       description: ""
     },
     {
       id: 22,
-      src: "/images/kkn/melatih.png",
+      src: "/images/melatih.png",
       title: "Peningkatan Kemampuan Petugas BUMDes",
       description: ""
     },
     {
       id: 23,
-      src: "/images/kkn/miko.png",
+      src: "/images/miko.png",
       title: "Koordinasi dengan SDN 2 Aek Sipitudai",
       description: ""
     },
     {
       id: 24,
-      src: "/images/kkn/mikolagi.png",
+      src: "/images/mikolagi.png",
       title: "Koordinasi dengan SDN 2 Aek Sipitudai",
       description: ""
     },
     {
       id: 25,
-      src: "/images/kkn/motongb2.png",
+      src: "/images/motongb2.png",
       title: "Persiapan Kegiatan Syukuran Air Bersih",
       description: ""
     },
     {
       id: 26,
-      src: "/images/kkn/nasionalisme.png",
+      src: "/images/nasionalisme.png",
       title: "Program Mengajar SMA",
       description: ""
     },
     {
       id: 27,
-      src: "/images/kkn/ngajar.png",
+      src: "/images/ngajar.png",
       title: "Kegiatan Libur Mengedukasi",
       description: ""
     },
     {
       id: 28,
-      src: "/images/kkn/ngajar-1.png",
+      src: "/images/ngajar-1.png",
       title: "Program Mengajar SD",
       description: ""
     },
     {
       id: 29,
-      src: "/images/kkn/no-bully.png",
+      src: "/images/no-bully.png",
       title: "Pengajaran Anti Bullying",
       description: ""
     },
     {
       id: 30,
-      src: "/images/kkn/parta.png",
+      src: "/images/parta.png",
       title: "Sosialisasi Hukum Keluarga & Warisan",
       description: ""
     },
     {
       id: 31,
-      src: "/images/kkn/novi.png",
+      src: "/images/novi.png",
       title: "Program Mengajar SD",
       description: ""
     },
     {
       id: 32,
-      src: "/images/kkn/novipose.png",
+      src: "/images/novipose.png",
       title: "Aksi Jumat Bersih",
       description: ""
     },
     {
       id: 33,
-      src: "/images/kkn/pancuran.png",
+      src: "/images/pancuran.png",
       title: "Kunjungan ke Aek Sipitudai",
       description: ""
     },
     {
       id: 34,
-      src: "/images/kkn/pasar.png",
+      src: "/images/pasar.png",
       title: "Pasar Tradisional Limbong",
       description: ""
     },
     {
       id: 35,
-      src: "/images/kkn/pasarrame.png",
+      src: "/images/pasarrame.png",
       title: "Pasar Tradisional Limbong",
       description: ""
     },
     {
       id: 36,
-      src: "/images/kkn/persiapan.png",
+      src: "/images/persiapan.png",
       title: "Gotong Royong Persiapan 17-an",
       description: ""
     },
     {
       id: 37,
-      src: "/images/kkn/phbs.png",
+      src: "/images/phbs.png",
       title: "Sosialisasi PHBS",
       description: ""
     },
     {
       id: 38,
-      src: "/images/kkn/pipaair.png",
+      src: "/images/pipaair.png",
       title: "Membantu Pemasangan Pipa Air",
       description: ""
     },
     {
       id: 39,
-      src: "/images/kkn/planginformasi.png",
+      src: "/images/planginformasi.png",
       title: "Pemasangan Plang Virtual Tour",
       description: ""
     },
     {
       id: 40,
-      src: "/images/kkn/puntung.png",
+      src: "/images/puntung.png",
       title: "Demonstrasi Biopestisida",
       description: ""
     },
     {
       id: 41,
-      src: "/images/kkn/puntung-1.png",
+      src: "/images/puntung-1.png",
       title: "Demonstrasi Biopestisida",
       description: ""
     },
     {
       id: 42,
-      src: "/images/kkn/puskesmas.png",
+      src: "/images/puskesmas.png",
       title: "Puskesmas Limbong",
       description: ""
     },
     {
       id: 43,
-      src: "/images/kkn/rambutjagung.png",
+      src: "/images/rambutjagung.png",
       title: "Sosialisasi Pemanfaatan Rambut Jagung",
       description: ""
     },
     {
       id: 44,
-      src: "/images/kkn/sekolah1.png",
+      src: "/images/sekolah1.png",
       title: "Siswa SDN 2 Aek Sipitudai",
       description: ""
     },
     {
       id: 45,
-      src: "/images/kkn/sekolah2.png",
+      src: "/images/sekolah2.png",
       title: "Siswa SDN 2 Aek Sipitudai",
       description: ""
     },
     {
       id: 46,
-      src: "/images/kkn/senam1.png",
+      src: "/images/senam1.png",
       title: "Aksi Jumat Sehat bersama Warga",
       description: ""
     },
     {
       id: 47,
-      src: "/images/kkn/senam2.png",
+      src: "/images/senam2.png",
       title: "Aksi Jumat Sehat bersama Warga",
       description: ""
     },
     {
       id: 48,
-      src: "/images/kkn/sigiber.png",
+      src: "/images/sigiber.png",
       title: "SIGIBER (Sikat Gigi Bersama)",
       description: ""
     },
     {
       id: 49,
-      src: "/images/kkn/sigiber-1.png",
+      src: "/images/sigiber-1.png",
       title: "SIGIBER (Sikat Gigi Bersama)",
       description: ""
     },
     {
       id: 50,
-      src: "/images/kkn/sigiber-2.png",
+      src: "/images/sigiber-2.png",
       title: "SIGIBER (Sikat Gigi Bersama)",
       description: ""
     },
     {
       id: 51,
-      src: "/images/kkn/sigiber-3.png",
+      src: "/images/sigiber-3.png",
       title: "SIGIBER (Sikat Gigi Bersama)",
       description: ""
     },
     {
       id: 52,
-      src: "/images/kkn/syukuran.png",
+      src: "/images/syukuran.png",
       title: "Persiapan Kegiatan Syukuran Air Bersih",
       description: ""
     },
     {
       id: 53,
-      src: "/images/kkn/taplakmeja.png",
+      src: "/images/taplakmeja.png",
       title: "Persiapan Kegiatan Syukuran Air Bersih",
       description: ""
     },
     {
       id: 54,
-      src: "/images/kkn/tele-pangururan.png",
+      src: "/images/tele-pangururan.png",
       title: "Gotong Royong Jalan Protokol",
       description: ""
     },
     {
       id: 55,
-      src: "/images/kkn/toga.png",
+      src: "/images/toga.png",
       title: "Revitalisasi Taman TOGA",
       description: ""
     },
     {
       id: 56,
-      src: "/images/kkn/umbul.png",
+      src: "/images/umbul.png",
       title: "Pemasangan Umbul-umbul",
       description: ""
     },
     {
       id: 57,
-      src: "/images/kkn/umbul-1.png",
+      src: "/images/umbul-1.png",
       title: "Pemasaangan Umbul-umbul",
       description: ""
     },
     {
       id: 58,
-      src: "/images/kkn/wisata.png",
+      src: "/images/wisata.png",
       title: "Pemandangan Desa Aek Sipitudai",
       description: ""
     },
     {
       id: 59,
-      src: "/images/kkn/upacara.png",
+      src: "/images/upacara.png",
       title: "Upacara 17-an Kecamatan",
       description: ""
     },
     {
-      id: 58,
-      src: "/images/kkn/17andesa.png",
+      id: 60,
+      src: "/images/17andesa.png",
       title: "Kemeriahan 17an Desa Aek Sipitudai",
       description: ""
     },
