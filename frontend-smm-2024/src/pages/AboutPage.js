@@ -94,7 +94,7 @@ const ContentSection = ({ activeItem, handleSidebarToggle, isSidebarOpen }) => {
     const timer = setTimeout(() => {
       setCurrentContent(content[activeItem]);
       setIsLoading(false);
-    }, 1500);
+    }, 0);
 
     return () => clearTimeout(timer);
   }, [activeItem]);
