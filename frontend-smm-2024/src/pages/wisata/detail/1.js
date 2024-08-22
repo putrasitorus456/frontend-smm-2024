@@ -166,7 +166,7 @@ function TogaDetailPage() {
     setIsLoading(true);
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // Delay 500ms atau sesuai kebutuhan
+    }, 1000); // Delay 500ms atau sesuai kebutuhan
 
     return () => clearTimeout(timer); // Bersihkan timeout saat komponen unmount
   }, [currentSectionIndex, language]);

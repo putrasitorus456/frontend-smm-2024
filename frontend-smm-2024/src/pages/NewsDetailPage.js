@@ -6,8 +6,6 @@ import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import LogoNav from '../components/logonav';
 
-console.log("NewsDetailPage component rendered");
-
 function NewsDetailPage() {
   const { _id } = useParams();
   const [news, setNews] = useState(null);

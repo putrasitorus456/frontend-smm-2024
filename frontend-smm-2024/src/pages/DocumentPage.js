@@ -63,7 +63,7 @@ function DocumentListPage() {
       >
         <LogoNav />
       </motion.div>
-      <section className="flex flex-col items-center px-16 pt-3 pb-20 bg-white max-md:px-5">
+      <section className="flex flex-col items-center px-16 pt-3 pb-10 bg-white max-md:px-5">
         <div className="flex flex-col w-full max-w-[1350px] max-md:max-w-full">
           <header className="flex flex-col self-center text-center max-md:max-w-full">
             <h2 className="self-center text-xl font-medium leading-1 text-sky-500">
@@ -83,6 +83,11 @@ function DocumentListPage() {
             ))}
           </div>
         </div>
+        <header className="flex flex-col self-center text-center max-md:max-w-full">
+          <h2 className="mt-10 px-7 self-center text-[15px] font-medium leading-1 text-[#666666] max-md:text-[13px]">
+            Developer berfokus pada pembuatan fungsionalitas fitur dan memastikan fitur dapat digunakan agar mampu diskalakan untuk jumlah arsip dan dokumen yang lebih besar. Untuk penambahan dokumen dan arsip, dapat dilakukan dengan mengupload file melalui API oleh admin.
+          </h2>
+        </header>
       </section>
       <CopyrightSection />
     </div>

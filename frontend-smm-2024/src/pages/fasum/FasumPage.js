@@ -8,8 +8,6 @@ import Copyright from '../../components/copyright';
 import MapComponent from '../../components/mapcomponent';
 import { useNavigate } from 'react-router-dom';
 
-console.log("FasumPage component rendered");
-
 const MotionSection = ({ children, delay = 0.2, duration = 0.75 }) => {
   return (
     <motion.section

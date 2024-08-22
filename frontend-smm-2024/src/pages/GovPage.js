@@ -5,8 +5,6 @@ import Header from '../components/header';
 import LogoNav from '../components/logonav';
 import Copyright from '../components/copyright';
 
-console.log("GovPage component rendered");
-
 const MotionSection = ({ children, delay = 0.2, duration = 0.75 }) => { // Mengurangi durasi menjadi 0.5 detik
   const { ref, inView } = useInView({
     triggerOnce: false,

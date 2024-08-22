@@ -8,8 +8,6 @@ import CopyrightSection from '../../../components/copyright';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
-console.log("KKNPage component rendered");
-
 const ImmediateMotionSection = ({ children, delay = 0.2, duration = 0.75 }) => {
   const { ref, inView } = useInView({
     triggerOnce: false,
