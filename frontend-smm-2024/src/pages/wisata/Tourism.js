@@ -41,7 +41,7 @@ function FacilityCard({ id, imageSrc, title, description, size, onLocationClick,
         className="w-full h-auto shadow-[0_2px_10px_rgba(0,0,0,0.5)] block m-0 p-0 object-cover"
       />
       <div className="overlay px-4 py-4">
-        <div className="font-semibold text-[40px] mb-2">{title}</div>
+        <div className="font-semibold text-lg md:text-[40px] mb-2">{title}</div>
         <div className="text-sm mb-5">{description}</div>
         <div className="flex flex-col space-y-2">
           <button
